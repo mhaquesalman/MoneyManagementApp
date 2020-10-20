@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".activity.ShoppingActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/descRelLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:text="Add" />
+
+            <RelativeLayout
+                android:id="@+id/dateRelLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itemRelLayout"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDate">
+
+                    <Button
+                        android:id="@+id/btnPickDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pick Date"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/white"
+                        android:background="@color/colorAccent"/>
+
+                    <EditText
+                        android:id="@+id/edtTxtDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/btnPickDate"
+                        android:hint="date"
+                        android:backgroundTint="@color/colorAccent"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/storeRelLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dateRelLayout"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/edtTxtStore"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtStore"
+                    android:hint="store"
+                    android:backgroundTint="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/txtStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Store"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/descRelLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/storeRelLayout"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/edtTxtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDesc"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="0dp"
+                    android:hint="description.."
+                    android:lines="2"
+                    android:backgroundTint="@color/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/itemRelLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAddShopping"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:id="@+id/btnPick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="pick item"
+                    android:textColor="@color/white"
+                    android:background="@color/colorAccent"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btnPick"
+                    android:visibility="gone"
+                    android:id="@+id/invisibleItemRelLayout">
+
+                    <EditText
+                        android:id="@+id/edtTxtPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtItemName"
+                        android:layout_marginTop="10dp"
+                        android:hint="price"
+                        android:textColor="@color/green" />
+
+                    <ImageView
+                        android:id="@+id/itemImg"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/txtItemName"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:id="@+id/txtItemName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:text="item name" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtAddShopping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Add Shopping"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtWarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAdd"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="Warning"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
